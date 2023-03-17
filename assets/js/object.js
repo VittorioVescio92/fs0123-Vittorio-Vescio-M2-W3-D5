@@ -22,7 +22,7 @@ window.onload = () => {
       const cardDiv = document.createElement("div");
       cardDiv.classList.add("col");
       cardDiv.innerHTML = `
-        <div class="card shadow-sm">
+        <div class="card shadow-sm bg-light">
           <img src="${prodotto.imageUrl}" alt="article image" />
           <div class="card-body">
             <h5 class="card-title">${prodotto.name}</h5>
