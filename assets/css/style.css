@@ -1,0 +1,9 @@
+.card {
+  height: 95%;
+}
+.card-body {
+  height: 50%;
+}
+img {
+  object-fit: contain;
+}

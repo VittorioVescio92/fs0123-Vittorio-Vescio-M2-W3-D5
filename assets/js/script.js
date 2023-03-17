@@ -2,6 +2,21 @@ const link = "https://striveschool-api.herokuapp.com/api/product/";
 const authorization =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MWY1ZWY4MWI0MjAwMTM5YjI3YmUiLCJpYXQiOjE2NzkwNDAzNTAsImV4cCI6MTY4MDI0OTk1MH0.Yl7PW8LE626yNQJ-rRpCeSlXZRL-6GBhLy1vFcVkMU0";
 
+const header = document.querySelector("header");
+header.innerHTML = `
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border my-5" role="status">
+      <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>    
+    
+  `;
+
+const removeSpinner = () => {
+  const spinner = document.querySelector(".spinner-border");
+  spinner.parentElement.removeChild(spinner);
+};
+
 window.onload = () => {
   fetch(link, {
     headers: {
@@ -15,8 +30,8 @@ window.onload = () => {
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("col");
         cardDiv.innerHTML = `
-        <div class="card shadow-sm bg-light mt-4">
-          <img src="${product.imageUrl}" alt="article image" />
+        <div class="card shadow-md bg-light mt-4">
+            <img src="${product.imageUrl}" alt="article image" />
           <div class="card-body">
             <h5 class="card-title">${product.name}</h5>
             <p class="card-text">${product.brand}</p>
@@ -30,6 +45,7 @@ window.onload = () => {
       `;
         rowDiv.appendChild(cardDiv);
       });
+      removeSpinner();
     })
     .catch(error => console.error(error));
 };
