@@ -55,11 +55,15 @@ const startProcess = event => {
     body: JSON.stringify(article),
   })
     .then(() => {
-      document.getElementById("name").value = "";
-      document.getElementById("description").value = "";
-      document.getElementById("brand").value = "";
-      document.getElementById("imageUrl").value = "";
-      document.getElementById("price").value = "";
+      if (!selectedId) {
+        document.getElementById("name").value = "";
+        document.getElementById("description").value = "";
+        document.getElementById("brand").value = "";
+        document.getElementById("imageUrl").value = "";
+        document.getElementById("price").value = "";
+      } else {
+        window.location.href = "index.html";
+      }
     })
     .catch(err => {
       console.log(err);

@@ -31,14 +31,14 @@ window.onload = () => {
         cardDiv.classList.add("col");
         cardDiv.innerHTML = `
         <div class="card shadow-md bg-light mt-4">
-            <img src="${product.imageUrl}" alt="article image" />
+        <img src="${product.imageUrl}" alt="article image"/>
           <div class="card-body">
             <h5 class="card-title">${product.name}</h5>
             <p class="card-text">${product.brand}</p>
-            <p class="card-text">${product.price} €</p>
+            <p class="card-text fs-4">${product.price} €</p>
             <div class="d-flex justify-content-between">
-              <a href="object.html?id=${product._id}" class="btn btn-primary">Scopri di più</a>
-              <a href="backoffice.html?id=${product._id}" class="btn btn-warning">Modifica Articolo</a>
+              <a href="object.html?id=${product._id}" class="btn btn-primary mx-1">Scopri di più</a>
+              <a href="backoffice.html?id=${product._id}" class="btn btn-warning ">Modifica Articolo</a>
               </div>
           </div>
         </div>
