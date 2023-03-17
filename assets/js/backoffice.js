@@ -10,10 +10,10 @@ const method = selectedId ? "PUT" : "POST";
 
 window.onload = () => {
   if (selectedId) {
-    (document.getElementById("editTitle").innerText = "Modifica"),
-      document.getElementById("submit").classList.add("d-none"),
-      document.getElementById("editItem").classList.remove("d-none"),
-      document.getElementById("deleteItem").classList.remove("d-none");
+    document.getElementById("editTitle").innerText = "Modifica";
+    document.getElementById("submit").classList.add("d-none");
+    document.getElementById("editItem").classList.remove("d-none");
+    document.getElementById("deleteItem").classList.remove("d-none");
 
     fetch(endpoint, {
       headers: {
@@ -53,9 +53,17 @@ const startProcess = event => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(article),
-  }).catch(err => {
-    console.log(err);
-  });
+  })
+    .then(() => {
+      document.getElementById("name").value = "";
+      document.getElementById("description").value = "";
+      document.getElementById("brand").value = "";
+      document.getElementById("imageUrl").value = "";
+      document.getElementById("price").value = "";
+    })
+    .catch(err => {
+      console.log(err);
+    });
 };
 
 const DeleteItem = () => {
@@ -81,24 +89,3 @@ const DeleteItem = () => {
       });
   }
 };
-
-// (() => {
-//   "use strict";
-
-//   const forms = document.querySelectorAll(".needs-validation");
-
-//   Array.from(forms).forEach(form => {
-//     form.addEventListener(
-//       "submit",
-//       event => {
-//         if (!form.checkValidity()) {
-//           event.preventDefault();
-//           event.stopPropagation();
-//         }
-
-//         form.classList.add("was-validated");
-//       },
-//       false
-//     );
-//   });
-// })();
