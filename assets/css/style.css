@@ -7,9 +7,18 @@
   transition: 0.3s ease-in-out;
   z-index: 999;
 }
-.card-body {
+
+.img {
+  object-fit: cover;
   height: 50%;
 }
-img {
-  object-fit: contain;
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+@media screen and (max-width: 450px) {
+  #navbarSupportedContent {
+    justify-content: center;
+  }
 }

@@ -30,16 +30,16 @@ window.onload = () => {
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("col");
         cardDiv.innerHTML = `
-        <div class="card shadow-md bg-light mt-4">
-        <img src="${product.imageUrl}" alt="article image"/>
-          <div class="card-body">
+        <div class="card shadow-lg bg-light mt-2">
+        <img class="img" src="${product.imageUrl}" alt="article image"/>
+          <div class="card-body p-3 d-grid align-content-center">
             <h5 class="card-title">${product.name}</h5>
             <p class="card-text">${product.brand}</p>
             <p class="card-text fs-4">${product.price} €</p>
-            <div class="d-flex justify-content-between">
-              <a href="object.html?id=${product._id}" class="btn btn-primary mx-1">Scopri di più</a>
-              <a href="backoffice.html?id=${product._id}" class="btn btn-warning ">Modifica Articolo</a>
-              </div>
+            <div class="container-fluid p-0 d-flex justify-content-between">
+              <a href="object.html?id=${product._id}" class="btn btn-primary">Scopri di più</a>
+              <a href="backoffice.html?id=${product._id}" class="btn btn-warning">Modifica Articolo</a>
+            </div>
           </div>
         </div>
       `;

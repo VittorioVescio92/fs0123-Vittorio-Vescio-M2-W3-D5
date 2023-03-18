@@ -93,3 +93,14 @@ const DeleteItem = () => {
       });
   }
 };
+
+//const myPassword = "epicode";
+
+// function checkPassword() {
+//   const password = document.getElementById("password").value;
+//   if (password === myPassword) {
+//     window.location.href = "backoffice.html";
+//   } else {
+//     document.getElementById("message").innerHTML = "Password errata! Non hai i permessi per accedere alla pagina";
+//   }
+// }
