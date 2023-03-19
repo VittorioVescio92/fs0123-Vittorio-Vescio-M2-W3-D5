@@ -1,9 +1,9 @@
 .card {
-  height: 95%;
+  height: 90%;
 }
 
 .card:hover {
-  scale: 1.2;
+  scale: 1.1;
   transition: 0.3s ease-in-out;
   z-index: 999;
 }
@@ -21,4 +21,9 @@
   #navbarSupportedContent {
     justify-content: center;
   }
+}
+
+.spinner-border {
+  width: 100px;
+  height: 100px;
 }

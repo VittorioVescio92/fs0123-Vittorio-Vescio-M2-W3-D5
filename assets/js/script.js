@@ -5,7 +5,7 @@ const authorization =
 const header = document.querySelector("header");
 header.innerHTML = `
     <div class="d-flex justify-content-center">
-      <div class="spinner-border my-5" role="status">
+      <div class="spinner-border fs-2 my-5" role="status">
       <span class="visually-hidden">Loading...</span>
       </div>
     </div>    
@@ -29,23 +29,25 @@ window.onload = () => {
       products.forEach(product => {
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("col");
+        rowDiv.appendChild(cardDiv);
         cardDiv.innerHTML = `
         <div class="card shadow-lg bg-light mt-2">
         <img class="img" src="${product.imageUrl}" alt="article image"/>
-          <div class="card-body p-3 d-grid align-content-center">
+          <div style="height:50%" class="card-body p-3 d-grid align-content-center">
             <h5 class="card-title">${product.name}</h5>
             <p class="card-text">${product.brand}</p>
             <p class="card-text fs-4">${product.price} €</p>
-            <div class="container-fluid p-0 d-flex justify-content-between">
-              <a href="object.html?id=${product._id}" class="btn btn-primary">Scopri di più</a>
-              <a href="backoffice.html?id=${product._id}" class="btn btn-warning">Modifica Articolo</a>
+            <div class="container-fluid p-0 d-flex justify-content-between align-self-end">
+              <a href="object.html?id=${product._id}" class="btn btn-primary me-1">Scopri di più</a>
+              <a href="backoffice.html?id=${product._id}" class="btn btn-warning">Modifica</a>
             </div>
           </div>
         </div>
       `;
-        rowDiv.appendChild(cardDiv);
       });
       removeSpinner();
+      const footer = document.getElementById("footer");
+      footer.innerHTML = `<p class="ms-3">Made with &hearts; by Vittorio Vescio</p>`;
     })
     .catch(error => console.error(error));
 };

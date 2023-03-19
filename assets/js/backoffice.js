@@ -14,6 +14,7 @@ window.onload = () => {
     document.getElementById("submit").classList.add("d-none");
     document.getElementById("editItem").classList.remove("d-none");
     document.getElementById("deleteItem").classList.remove("d-none");
+    document.getElementById("reset").classList.add("d-none");
 
     fetch(endpoint, {
       headers: {

@@ -21,6 +21,7 @@ window.onload = () => {
       const rowDiv = document.getElementById("row");
       const cardDiv = document.createElement("div");
       cardDiv.classList.add("col");
+      rowDiv.appendChild(cardDiv);
       cardDiv.innerHTML = `
         <div class="card shadow-sm bg-light">
           <img src="${prodotto.imageUrl}" alt="article image" />
@@ -35,7 +36,8 @@ window.onload = () => {
           </div>
         </div>
       `;
-      rowDiv.appendChild(cardDiv);
+      const footer = document.getElementById("footer");
+      footer.innerHTML = `<p class="ms-3">Made with &hearts; by Vittorio Vescio</p>`;
     })
     .catch(err => {
       console.log(err);
